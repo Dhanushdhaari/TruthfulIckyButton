@@ -1,0 +1,16 @@
+pragma solidity 0.6.6;
+
+import "../BerryMatchingEngine.sol";
+
+
+/**
+ *    @dev MockMatchEngine is a mock for testing overflow
+ */
+
+contract MockMatchEngine is BerryMatchingEngine {
+    constructor(address _admin) public BerryMatchingEngine(_admin) {}
+
+    function reserveIdToAddress(bytes32 reserveId) public view returns (address) {
+        return getReserveAddress(reserveId);
+    }
+}
